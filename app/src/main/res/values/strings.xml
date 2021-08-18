@@ -3,4 +3,11 @@
     <string name="fragment_main">Fragment Main</string>
     <string name="fragment_list">Fragment List</string>
     <string name="fragment_add">Fragment Add</string>
+
+    <string name="tv_show_item_release_date_bold">Release Date :</string>
+    <string name="tv_show_item_release_date">Release Date : %s</string>
+
+    <string name="tv_show_item_seasons_bold">Seasons :</string>
+    <string name="tv_show_item_seasons">Seasons : %s</string>
+
 </resources>

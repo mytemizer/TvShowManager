@@ -22,8 +22,6 @@ class MainFragment: Fragment() {
 
     private lateinit var navController: NavController
 
-    private val viewModel: MainViewModel by viewModels()
-
     private lateinit var binding: FragmentMainBinding
 
     override fun onCreateView(

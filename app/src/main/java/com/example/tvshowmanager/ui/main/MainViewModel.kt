@@ -16,28 +16,5 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(private val repository: TvShowRepository): ViewModel() {
 
-    private val _tvShowList = MutableLiveData<ArrayList<CreateMovieMutation.Movie>>()
-    val tvShowList : LiveData<ArrayList<CreateMovieMutation.Movie>> = _tvShowList
 
-    fun insertNewTvShow(title: String, seasonCount: Double ) {
-        viewModelScope.launch {
-            var movieInput = CreateMovieFieldsInput(title = title, seasons = Input.optional(seasonCount))
-
-            val createMovieMutation = CreateMovieMutation(CreateMovieInput(Input.fromNullable(movieInput)))
-
-            val result = repository.insertNewTvShow(createMovieMutation)
-        }
-    }
-
-    fun fetchTvShows() {
-        viewModelScope.launch {
-            val tvShowListResponse = repository.fetchTvShows()
-
-            if (tvShowListResponse.hasErrors()) {
-
-            } else {
-                tvShowListResponse.data?.movies
-            }
-        }
-    }
 }
