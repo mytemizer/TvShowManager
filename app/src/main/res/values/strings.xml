@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TvShowManager</string>
+    <string name="fragment_main">Fragment Main</string>
 </resources>
