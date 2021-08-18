@@ -5,14 +5,52 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Main Fragment"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <View
+        android:id="@+id/view_back_picture"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_foreground"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/main_foreground_shadow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_add_tv_show"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/background_main_button"
+        android:text="Add New Tv Show"
+        android:foreground="?selectableItemBackground"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_back_picture" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_list_tv_shows"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/background_main_button"
+        android:foreground="?selectableItemBackground"
+        android:text="List Tv Shows"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_add_tv_show" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

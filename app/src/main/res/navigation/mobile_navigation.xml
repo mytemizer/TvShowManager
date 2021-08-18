@@ -10,6 +10,26 @@
         android:name="com.example.tvshowmanager.ui.main.MainFragment"
         android:label="@string/fragment_main"
         tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_main_to_list_fragment"
+            app:destination="@id/navigation_list_fragment" />
+        <action
+            android:id="@+id/action_main_to_addshow_fragment"
+            app:destination="@id/navigation_add_tvshow_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_list_fragment"
+        android:name="com.example.tvshowmanager.ui.listtvshow.TvShowListFragment"
+        android:label="@string/fragment_list"
+        tools:layout="@layout/fragment_tv_show_list">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_add_tvshow_fragment"
+        android:name="com.example.tvshowmanager.ui.addtvshow.AddTvShowFragment"
+        android:label="@string/fragment_add"
+        tools:layout="@layout/fragment_add_tv_show">
     </fragment>
 
 </navigation>
