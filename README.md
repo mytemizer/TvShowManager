@@ -10,7 +10,7 @@ Tv Show Manager app where you can keep track of the tv shows you follow
 - **Coroutine** is used to carry data to view in background
 - **ViewBinding** for binding views to the corresponding pages
 - **Constraint Layout** for creating layouts that is suitable with different languages and preventing overdraw issue
-- **Navigation Component* for navigation between pages in a safe way
+- **Navigation Component** for navigation between pages in a safe way
 
 ## Architecture
 
