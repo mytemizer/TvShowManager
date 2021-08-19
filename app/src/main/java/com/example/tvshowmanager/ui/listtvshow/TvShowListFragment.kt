@@ -13,7 +13,6 @@ import com.apollographql.apollo.api.Error
 import com.example.tvshowmanager.databinding.FragmentTvShowListBinding
 import com.example.tvshowmanager.util.*
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.delay
 
 @AndroidEntryPoint
 class TvShowListFragment: Fragment() {

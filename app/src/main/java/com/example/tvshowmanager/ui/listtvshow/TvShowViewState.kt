@@ -7,8 +7,6 @@ data class TvShowViewState(
     val seasons: Double?
 ) {
 
-    val DATE_DELIMETER = 'T'
-
     fun areItemsTheSame(newItem: TvShowViewState): Boolean {
         return id.equals(newItem.id)
     }

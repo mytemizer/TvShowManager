@@ -23,6 +23,8 @@ import javax.inject.Inject
 @HiltViewModel
 class AddTvShowViewModel @Inject constructor(private val repository: TvShowRepository): ViewModel() {
 
+    private val INPUT_DATE_SPLIT_DELIMETER = '-'
+    private val DATE_PATTERN = "yyyy-MM-dd"
     private val _event = MutableLiveData<Event<EventType>>()
     val event: LiveData<Event<EventType>> = _event
 
@@ -56,7 +58,7 @@ class AddTvShowViewModel @Inject constructor(private val repository: TvShowRepos
     fun insertNewTvShow() {
         var date: Date? = null
         if (editTextReleaseDate.isNullOrEmpty().not()) {
-            date = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse(editTextReleaseDate!!)
+            date = SimpleDateFormat(DATE_PATTERN, Locale.getDefault()).parse(editTextReleaseDate!!)
         }
 
         var seasons: Double? = null
@@ -66,11 +68,16 @@ class AddTvShowViewModel @Inject constructor(private val repository: TvShowRepos
         insertNewTvShow(editTextName, seasons , date)
     }
 
+
+    // Checks validity of inputs,
+    // Name rule -> Not empty
+    // Date rule -> yyyy-MM-dd
+    // Season rule -> Only Digit
     fun checkHasValidInputs() : Boolean {
         if (editTextName.isEmpty()) return false
         if (editTextReleaseDate.isNullOrEmpty().not()) {
             if (editTextReleaseDate?.length!! != 10) return false
-            val split = editTextReleaseDate?.split('-')
+            val split = editTextReleaseDate?.split(INPUT_DATE_SPLIT_DELIMETER)
             if (split?.size != 3) return false
             if (split[0].length != 4 || split[1].length != 2 || split[2].length != 2) return false
         }

@@ -5,16 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import com.apollographql.apollo.ApolloClient
-import com.apollographql.apollo.coroutines.await
 import com.example.tvshowmanager.R
 import com.example.tvshowmanager.databinding.FragmentMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainFragment: Fragment() {

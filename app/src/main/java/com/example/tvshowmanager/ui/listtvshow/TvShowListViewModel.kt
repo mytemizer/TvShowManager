@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.tvshowmanager.CreateMovieMutation
 import com.example.tvshowmanager.FetchTvShowsQuery
 import com.example.tvshowmanager.data.TvShowRepository
 import com.example.tvshowmanager.model.ApiResult
@@ -17,6 +16,8 @@ import javax.inject.Inject
 @HiltViewModel
 class TvShowListViewModel @Inject constructor(private val repository: TvShowRepository) :
     ViewModel() {
+
+    private val DATE_SPLIT_DELIMETER = 'T'
 
     private val _tvShowList = MutableLiveData<ArrayList<TvShowViewState>>()
     val tvShowList: LiveData<ArrayList<TvShowViewState>> = _tvShowList
@@ -45,11 +46,13 @@ class TvShowListViewModel @Inject constructor(private val repository: TvShowRepo
         }
     }
 
+    // This method converts backend data type to view state data type.
+    // So that only necessary fields are given to the view side.
     fun List<FetchTvShowsQuery.Edge?>.mapToViewState() = ArrayList<TvShowViewState>().apply {
         for (edge in this@mapToViewState) {
             edge?.let { item ->
                 item.node?.let { node ->
-                    val releaseDateText = node.releaseDate?.let { if (it is String) it.split('T')[0] else "" } ?: ""
+                    val releaseDateText = node.releaseDate?.let { if (it is String) it.split(DATE_SPLIT_DELIMETER)[0] else "" } ?: ""
                     add(0, TvShowViewState(node.id, node.title, releaseDateText, node.seasons))
                 }
             }

@@ -1,7 +1,6 @@
 package com.example.tvshowmanager.ui.listtvshow
 
 import android.graphics.Color
-import android.text.format.DateFormat.format
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -11,9 +10,6 @@ import com.example.tvshowmanager.R
 import com.example.tvshowmanager.databinding.ItemTvShowListItemBinding
 import com.example.tvshowmanager.util.gone
 import com.example.tvshowmanager.util.makeTextColored
-import java.lang.String.format
-import java.text.DateFormat
-import java.util.*
 
 class TvShowListAdapter : ListAdapter<TvShowViewState, TvShowViewHolder>(DIFF_CALLBACK) {
 
