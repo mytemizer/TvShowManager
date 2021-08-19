@@ -29,3 +29,8 @@ sealed class EventType {
     object HideProgress : EventType()
 }
 
+
+sealed class AddTvShowEvents : EventType() {
+    object NewTvShowAdded : AddTvShowEvents()
+}
+

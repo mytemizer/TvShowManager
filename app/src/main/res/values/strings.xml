@@ -9,5 +9,11 @@
 
     <string name="tv_show_item_seasons_bold">Seasons :</string>
     <string name="tv_show_item_seasons">Seasons : %s</string>
+    <string name="hint_tv_show_name">Tv Show Name</string>
+    <string name="hint_tv_show_release_date">Release Date, ex: 2021–08–19</string>
+    <string name="hint_tv_show_seasons">Seasons</string>
+    <string name="button_list_tv_show">List Tv Shows</string>
+    <string name="button_add_tv_show">Add New Tv Show</string>
+    <string name="button_save_tv_show">Save Tv Show</string>
 
 </resources>

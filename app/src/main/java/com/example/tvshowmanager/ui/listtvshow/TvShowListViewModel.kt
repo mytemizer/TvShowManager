@@ -21,16 +21,16 @@ class TvShowListViewModel @Inject constructor(private val repository: TvShowRepo
     private val _tvShowList = MutableLiveData<ArrayList<TvShowViewState>>()
     val tvShowList: LiveData<ArrayList<TvShowViewState>> = _tvShowList
 
-    private val _event = MutableLiveData<EventType>()
-    val event: LiveData<EventType> = _event
+    private val _event = MutableLiveData<Event<EventType>>()
+    val event: LiveData<Event<EventType>> = _event
 
     fun fetchTvShows() {
-        _event.value = EventType.ShowProgress
+        _event.value = Event(EventType.ShowProgress)
 
         viewModelScope.launch {
             val tvShowListResponse = repository.fetchTvShows()
 
-            _event.value = EventType.HideProgress
+            _event.value = Event(EventType.HideProgress)
             when (tvShowListResponse) {
 
                 is ApiResult.Success -> {
@@ -39,7 +39,7 @@ class TvShowListViewModel @Inject constructor(private val repository: TvShowRepo
                 }
 
                 is ApiResult.Error -> {
-                    _event.value = EventType.Error(tvShowListResponse)
+                    _event.value = Event(EventType.Error(tvShowListResponse))
                 }
             }
         }

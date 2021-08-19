@@ -9,7 +9,7 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/grey"
+        android:background="@color/purple_500"
         android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.MaterialToolbar
@@ -53,7 +53,7 @@
             android:layout_marginTop="50dp"
             android:background="@drawable/background_main_button"
             android:foreground="?selectableItemBackground"
-            android:text="Add New Tv Show"
+            android:text="@string/button_add_tv_show"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/background_main_button"
             android:foreground="?selectableItemBackground"
-            android:text="List Tv Shows"
+            android:text="@string/button_list_tv_show"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

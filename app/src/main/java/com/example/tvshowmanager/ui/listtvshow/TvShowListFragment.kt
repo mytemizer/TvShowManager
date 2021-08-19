@@ -11,9 +11,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.apollographql.apollo.api.Error
 import com.example.tvshowmanager.databinding.FragmentTvShowListBinding
-import com.example.tvshowmanager.util.EventType
-import com.example.tvshowmanager.util.gone
-import com.example.tvshowmanager.util.visible
+import com.example.tvshowmanager.util.*
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 
@@ -62,11 +60,12 @@ class TvShowListFragment: Fragment() {
                 tvShowListAdapter.submitList(it)
             })
 
-            event.observe(viewLifecycleOwner, {
+            event.observe(viewLifecycleOwner, EventObserver {
                 when(it) {
                     is EventType.ShowProgress -> showProgress()
                     is EventType.HideProgress -> hideProgress()
                     is EventType.Error -> handleError(it.error.error)
+                    else -> Unit
                 }
             })
 
