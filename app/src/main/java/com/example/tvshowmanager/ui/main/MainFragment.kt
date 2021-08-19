@@ -30,7 +30,6 @@ class MainFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // viewModel.insertNewTvShow("123", 12.0)
         navController = Navigation.findNavController(view)
         initListeners()
     }
