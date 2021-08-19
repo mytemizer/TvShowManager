@@ -34,39 +34,64 @@
             android:layout_height="50dp"
             android:layout_marginHorizontal="36dp"
             android:layout_marginTop="24dp"
+            android:layout_marginBottom="12dp"
             android:background="@drawable/background_edittext"
             android:hint="@string/hint_tv_show_name"
             android:paddingHorizontal="12dp"
             android:textColor="@color/black"
             android:textColorHint="@color/light_grey"
-            app:layout_constraintBottom_toTopOf="@id/et_tv_show_release_date"
+            app:layout_constraintBottom_toTopOf="@id/tv_release_optional"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_release_optional"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/optional"
+            android:textColor="@color/grey"
+            app:layout_constraintTop_toBottomOf="@id/et_tv_show_name"
+            app:layout_constraintBottom_toTopOf="@id/et_tv_show_release_date"
+            app:layout_constraintStart_toStartOf="@id/et_tv_show_release_date"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/et_tv_show_release_date"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="36dp"
-            android:layout_marginTop="8dp"
             android:background="@drawable/background_edittext"
             android:hint="@string/hint_tv_show_release_date"
             android:inputType="datetime"
             android:paddingHorizontal="12dp"
             android:textColor="@color/black"
             android:textColorHint="@color/light_grey"
-            app:layout_constraintBottom_toTopOf="@id/et_tv_show_season"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_seasons_optional"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_tv_show_name" />
+            app:layout_constraintTop_toBottomOf="@id/tv_release_optional"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_seasons_optional"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/optional"
+            android:textColor="@color/grey"
+            app:layout_constraintTop_toBottomOf="@id/et_tv_show_release_date"
+            app:layout_constraintBottom_toTopOf="@id/et_tv_show_season"
+            app:layout_constraintStart_toStartOf="@id/et_tv_show_season"
+            app:layout_constraintVertical_chainStyle="packed" />
+
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/et_tv_show_season"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="36dp"
-            android:layout_marginTop="8dp"
             android:background="@drawable/background_edittext"
             android:hint="@string/hint_tv_show_seasons"
             android:inputType="numberDecimal"
@@ -75,7 +100,8 @@
             android:textColorHint="@color/light_grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_tv_show_release_date" />
+            app:layout_constraintTop_toBottomOf="@id/tv_seasons_optional"
+            app:layout_constraintVertical_chainStyle="packed" />
 
 
         <androidx.appcompat.widget.AppCompatButton

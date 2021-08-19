@@ -15,5 +15,6 @@
     <string name="button_list_tv_show">List Tv Shows</string>
     <string name="button_add_tv_show">Add New Tv Show</string>
     <string name="button_save_tv_show">Save Tv Show</string>
+    <string name="optional">Optional</string>
 
 </resources>
